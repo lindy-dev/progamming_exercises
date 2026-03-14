@@ -1,8 +1,9 @@
 class GraphEdgeList:
     def __init__(self):
-        self.edges = []
+        self.edges = [] # Initialize an empty list to hold edge tuples
     
     def add_edge(self, u, v, weight=1):
+        # Store the connection as a tuple: (Start Node, End Node, Weight)
         self.edges.append((u, v, weight))
     
     def remove_edge(self, u, v):
@@ -10,6 +11,7 @@ class GraphEdgeList:
                       if not (a == u and b == v)]
     
     def has_edge(self, u, v):
+        # Iterate through all edges to see if any match 'u' -> 'v'
         return any(a == u and b == v for a, b, _ in self.edges)
     
     def get_neighbors(self, vertex):
